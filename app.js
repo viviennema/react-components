@@ -15,16 +15,34 @@ const Steak = () => (
 class GroceryListItem  extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      done: false
+    };
   }
    
-  //  const OnListItemClick = (event) => {
-  //   console.log('clicked');
-  //   }
+  OnListItemMouseEnter = (event) => {
+    this.setState({
+      done: !this.state.done
+    });
+  }
+  
+    // OnListItemMouseLeave = (event) => {
+    //   this.setState({
+    //     done: this.state.done
+    // });
+  
+
+   
+
 
   render() {
+      const style = {
+        fontWeight: this.state.done ? 'bold' : 'none',
+        fontSize: this.state.done ? '20px' : 'none'
+      }
      return (
        <ul>
-       <li>{this.props.items[0]}</li>
+       <li style={style} onMouseEnter={this.OnListItemMouseEnter.bind(this)}>{this.props.items[0]}</li>
        <li>{this.props.items[1]}</li>
        <li>{this.props.items[2]}</li>
        <li>{this.props.items[3]}</li>
