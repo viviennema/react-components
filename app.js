@@ -12,25 +12,33 @@ const Steak = () => (
 );
 
 
-const GroceryListItem =(props) => {
+class GroceryListItem  extends React.Component {
+  constructor(props){
+    super(props);
+  }
+   
+  //  const OnListItemClick = (event) => {
+  //   console.log('clicked');
+  //   }
 
-   const OnListItemClick = (event) => {
-    console.log('i got clicked!');
-     }
-  return (
-  <ul>
-    <li onClick ={OnListItemClick}>{props.items[0]}</li>
-    <li>{props.items[1]}</li>
-    <li>{props.items[2]}</li>
-    <li>{props.items[3]}</li>
-    <li>{props.items[4]}</li>
-  </ul>
-  );
-}
+  render() {
+     return (
+       <ul>
+       <li>{this.props.items[0]}</li>
+       <li>{this.props.items[1]}</li>
+       <li>{this.props.items[2]}</li>
+       <li>{this.props.items[3]}</li>
+       <li>{this.props.items[4]}</li>
+      </ul>
+      
+      
+      );
+    }
+  }
 
 
 
-const App = () => (
+const App = (props) => (
   <div>
      <h1>GroceryList</h1>
         <GroceryListItem items={['milk', 'steak', 'apple','wine', 'bread' ]} />
