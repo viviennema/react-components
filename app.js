@@ -12,15 +12,24 @@ const Steak = () => (
 );
 
 
-const GroceryListItem =(props) => (
+const GroceryListItem =(props) => {
+
+   const OnListItemClick = (event) => {
+    console.log('i got clicked!');
+     }
+  return (
   <ul>
-    <li>{props.items[0]}</li>
+    <li onClick ={OnListItemClick}>{props.items[0]}</li>
     <li>{props.items[1]}</li>
     <li>{props.items[2]}</li>
     <li>{props.items[3]}</li>
     <li>{props.items[4]}</li>
   </ul>
-)
+  );
+}
+
+
+
 const App = () => (
   <div>
      <h1>GroceryList</h1>
