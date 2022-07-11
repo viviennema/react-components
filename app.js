@@ -11,14 +11,8 @@ const Steak = () => (
   </div>
 );
 
-const App = () => (
-  <div>
-     <h1>GroceryList</h1>
-        <Milk />
-        <Steak />
-  </div>
-);
-const CroceryListItem =(props) => (
+
+const GroceryListItem =(props) => (
   <ul>
     <li>{props.items[0]}</li>
     <li>{props.items[1]}</li>
@@ -27,7 +21,12 @@ const CroceryListItem =(props) => (
     <li>{props.items[4]}</li>
   </ul>
 )
-
+const App = () => (
+  <div>
+     <h1>GroceryList</h1>
+        <GroceryListItem items={['milk', 'steak', 'apple','wine', 'bread' ]} />
+  </div>
+);
 // class App extends React.Component {
 //   constructor(props){
 //    super(props);
